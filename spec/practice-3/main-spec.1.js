@@ -157,7 +157,6 @@ describe("Class", () => {
     let student = new Student("Jerry", 21, clazz);
     let teacher = new Teacher("Tom", 21, [clazz]);
     spyOn(teacher, 'notifyStudentAppended');
-       teacher.joinClazzes();
     clazz.appendMember(student);
     expect(teacher.notifyStudentAppended).toHaveBeenCalledWith("Jerry has joined Class 2");
   });
@@ -170,7 +169,6 @@ describe("Class", () => {
     let teacher = new Teacher("Tom", 21, [clazz]);
     spyOn(teacher, 'notifyLeaderAssigned');
     spyOn(teacher, 'notifyStudentAppended');
-    teacher.joinClazzes();
     clazz.appendMember(student);
     clazz.assignLeader(student);
     expect(teacher.notifyLeaderAssigned).toHaveBeenCalledWith("Jerry become Leader of Class 2")

@@ -29,16 +29,16 @@ module.exports = class Teacher extends Person{
             }
             return false;
     }
-    notifyStudentAppended()
-    {
-        // if(student.clazz.hasStudent(student.name)&&this.isTeaching(student)&&student.name===student.clazz.leader)
-        //     {
-        //         return `I know ${student.name} become Leader of ${student.clazz.number}.`;
-        //     }
-        // if(student.clazz.hasStudent(student.name)&&this.isTeaching(student))
-        //     {
-        //         console.log (`I know ${student.name} has joined Class ${student.clazz.number}.`);
-        //     }
+         joinClazzes () {
+    for (let value of this.clazzes) {
+      value.teacherMember.push(this);
     }
-    notifyLeaderAssigned()
+  }
+    notifyStudentAppended(joinedMessage) {
+    console.log(`I am ${this.name}. I know ${joinedMessage}.`);
+  }
+
+  notifyLeaderAssigned(joinedMessage) {
+    console.log(`I am ${this.name}. I know ${joinedMessage}.`);
+  }
 }
