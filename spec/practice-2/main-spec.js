@@ -76,7 +76,7 @@ describe("Person", () => {
 
     it("should show no class this teacher teacher, when there is no class assgin to this teacher",
     () => {
-      let teacher = new Teacher("Joun", 21, []);
+      let teacher = new Teacher("Joun", 21,[]);
 
       let introduce = teacher.introduce();
 
